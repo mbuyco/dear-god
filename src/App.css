@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  width: 50vh;
+  width: 35vh;
   pointer-events: none;
 }
 
@@ -20,4 +20,13 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-input {
+    width: 60vw;
+    height: 30px;
+    margin-top: 40px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 1vh 1vw;
 }
