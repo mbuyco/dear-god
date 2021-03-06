@@ -1,0 +1,6 @@
+.PrayerSuccess > p {
+    color: #6291AF;
+}
+.PrayerSuccess > button {
+    cursor: pointer;
+}

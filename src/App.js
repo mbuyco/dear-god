@@ -1,11 +1,18 @@
+import React from 'react';
+
 import './App.css';
+import PrayerInput from './components/prayer/PrayerInput';
+import PrayerSuccess from './components/prayer/PrayerSuccess';
 
 function App() {
+  const [isDone, setIsDone] = React.useState(false);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={process.env.PUBLIC_URL + '/images/logo.png'} className="App-logo" alt="logo" />
-        <input type="text" className="App-input" placeholder="What do you want to pray for?" />
+        <img style={{display: isDone ? 'none' : 'block'}} src={process.env.PUBLIC_URL + '/images/logo.png'} className="App-logo" alt="logo" />
+        <PrayerInput isDone={isDone} onDone={setIsDone} />
+        <PrayerSuccess isDone={isDone} onDone={setIsDone} />
       </header>
     </div>
   );

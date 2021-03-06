@@ -3,12 +3,12 @@
 }
 
 .App-logo {
-  width: 35vh;
   pointer-events: none;
+  width: 50vh;
 }
 
 .App-header {
-  background-color: #fff;
+  background-color: #F3E6DC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,21 @@
     width: 60vw;
     height: 30px;
     margin-top: 40px;
-    border-radius: 6px;
+    border-radius: 12px;
     border: 1px solid #ccc;
     padding: 1vh 1vw;
+}
+.App-input:focus {
+    outline: none;
+}
+
+button {
+    background: #c6a569;
+    border: none;
+    border-radius: 12px;
+    color: #FFFFFF;
+    padding: 10px 20px;
+}
+button:focus {
+    outline: none;
 }
