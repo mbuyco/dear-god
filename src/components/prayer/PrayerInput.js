@@ -1,9 +1,9 @@
 import React from 'react';
 
+import './PrayerInput.css';
 import sendEmail from '../../api/email';
 
 function PrayerInput(props) {
-  const ENTER_KEY_CODE = 13;
   const [inputValue, setInputValue] = React.useState('');
 
   function handleInputChange(e) {
@@ -11,13 +11,9 @@ function PrayerInput(props) {
   }
 
   async function handleSubmit(e) {
-    if (e.keyCode !== ENTER_KEY_CODE) {
-      return;
-    }
-
     try {
       props.onProgress(true);
-      await sendEmail(e.target.value)
+      await sendEmail(inputValue)
       props.onDone(true);
       setInputValue('');
     } catch (e) {
@@ -29,7 +25,10 @@ function PrayerInput(props) {
 
   return (
     <div className="PrayerInput" style={{display: props.isDone ? 'none' : 'block'}}>
-      <input type="text" disabled={props.inProgress} onKeyUp={handleSubmit} className="App-input" onChange={handleInputChange} placeholder="What do you want to pray for?" value={inputValue} />
+      <input type="text" disabled={props.inProgress} className="App-input" onChange={handleInputChange} placeholder="What do you want to pray for?" value={inputValue} />
+      <div>
+        <button disabled={props.inProgress} onClick={handleSubmit} type="button" className="PrayerInput-button">Submit</button>
+      </div>
     </div>
   );
 }
